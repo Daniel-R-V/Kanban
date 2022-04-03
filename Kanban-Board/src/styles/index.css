@@ -1,0 +1,68 @@
+:root {
+  --main-color-h: 183;
+  --main-color-s: 100%;
+  --main-color-l: 35%;
+  --main-color: hsl(
+    var(--main-color-h),
+    var(--main-color-s),
+    var(--main-color-l)
+  );
+
+  --header-color-h: 217;
+  --header-color-s: 38%;
+  --header-color-l: 28%;
+  --header-color: hsl(
+    var(--header-color-h),
+    var(--header-color-s),
+    var(--header-color-l)
+  );
+
+  --column-color-h: 173;
+  --column-color-s: 100%;
+  --column-color-l: 97%;
+  --column-color: hsl(
+    var(--column-color-h),
+    var(--column-color-s),
+    var(--column-color-l)
+  );
+
+  --border-color: hsl(
+    var(--main-color-h),
+    var(--main-color-s),
+    calc(var(--main-color-l) * 0.5)
+  );
+
+  --title-color-h: 40;
+  --title-color-s: 100%;
+  --title-color-l: 60%;
+  --title-color: hsl(
+    var(--title-color-h),
+    var(--title-color-s),
+    var(--title-color-l)
+  );
+
+  --body-color-h: 190;
+  --body-color-s: 77%;
+  --body-color-l: 88%;
+  --body-color: hsl(
+    var(--body-color-h),
+    var(--body-color-s),
+    var(--body-color-l)
+  );
+}
+
+/*Esta es una de las cosas que dijimos de cambiar, verdad?? */
+body {
+  background-color: var(--body-color);
+  font-size: 16px;
+}
+
+.Kanban-Board {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  overflow: hidden;
+}

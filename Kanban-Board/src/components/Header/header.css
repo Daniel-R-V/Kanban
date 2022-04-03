@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--header-color);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Este box shadow deberia cambiarse la escala de color para trabajarlo
+                                                  o como rgb esta bien??*/
+  height: 100px;
+  color: white; /*Este color de letra deberiamos cambiarlo tambien dandole una variable?
+                  o no es necesario al ser blanco generico? */
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}

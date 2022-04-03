@@ -1,0 +1,8 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: clamp(650px, 80vw, 1800px);
+  margin: 0 auto;
+}
