@@ -1,31 +1,28 @@
+const { Task } = require("../models");
+
 const list = async (req, res) => {
-  res.code(200).send(Response);
+  try {
+    const tasks = await Task.findAll();
+    res.code(200).send(tasks);
+  } catch (error) {
+    res.code(500).send({ message: error.message });
+  }
 };
 
-const Response = [
-  {
-    id: 1,
-    desc: "texto1",
-    date: "13/03/2022",
-    status: "TO DO",
-    title: "titulo1",
-  },
+const create = async (req, res) => {
+  const { desc, title } = req.body;
+  const date = new Date().toISOString();
+  const status = "TO DO";
+  try {
+    const task = await Task.create({ desc, date, title, status });
+    if (task) {
+      res.code(201).send(task);
+    } else {
+      res.code(401).send({ message: "error creating task" });
+    }
+  } catch (error) {
+    res.code(500).send({ message: error.message });
+  }
+};
 
-  {
-    id: 2,
-    desc: "texto2",
-    date: "13/03/2022",
-    status: "DONE",
-    title: "titulo2",
-  },
-
-  {
-    id: 3,
-    desc: "texto3",
-    date: "13/03/2022",
-    status: "TO DO",
-    title: "titulo3",
-  },
-];
-
-module.exports = { list };
+module.exports = { list, create };
