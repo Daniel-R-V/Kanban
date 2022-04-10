@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.27.4"
+    "dotenv": "^16.0.0",
+    "fastify": "^3.27.4",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.18.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

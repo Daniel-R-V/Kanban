@@ -1,0 +1,19 @@
+version: "0.1"
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    build:
+      context: ./MySQL
+      dockerfile: Dockerfile
+      target: base
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./logs:/var/log/mysql
+    ports:
+      - ${PORT}:${PORT}
+    expose:
+      - "${PORT}"
