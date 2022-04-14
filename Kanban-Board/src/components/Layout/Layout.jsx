@@ -52,14 +52,23 @@ function Layout({ user }) {
         <p>You need to be logged to use the app</p>
       ) : (
         <main className="layout">
-          <form onSubmit={handleSubmit}>
-            <input name="title" type="text" placeholder="Add a task title" />
+          <form className="form" onSubmit={handleSubmit}>
+            <h3 className="title-form">Create a New Task</h3>
             <input
+              className="input"
+              name="title"
+              type="text"
+              placeholder="Title"
+            />
+            <input
+              className="input"
               name="description"
               type="text"
-              placeholder="Add a task description"
+              placeholder="Description"
             />
-            <button type="submit">Add task</button>
+            <button className="submit" type="submit">
+              Add It
+            </button>
           </form>
           <Columns tasks={tasks} />
         </main>
