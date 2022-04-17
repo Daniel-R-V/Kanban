@@ -1,5 +1,7 @@
 const { Task } = require("../models");
 
+const statuses = ["TO DO", "IN PROGRESS", "DONE"];
+
 const list = async (req, res) => {
   try {
     const tasks = await Task.findAll();
@@ -25,4 +27,29 @@ const create = async (req, res) => {
   }
 };
 
-module.exports = { list, create };
+const destroy = async (req, res) => {
+  const id = req.params.taskId;
+  try {
+    await Task.destroy({ where: { id: id } });
+    res.code(204).send({ message: "task deleted" });
+  } catch (error) {
+    res.code(500).send({ message: error.message });
+  }
+};
+
+const update = async (req, res) => {
+  const id = req.params.taskId;
+  const { status } = req.body;
+
+  if (!statuses.includes(status)) {
+    res.code(500).send({ message: "status not allowed" });
+  }
+  try {
+    const task = await Task.update({ where: id, values: { status } });
+    res.code(204).send(task);
+  } catch (error) {
+    res.code(500).send({ message: error.message });
+  }
+};
+
+module.exports = { list, create, destroy, update };

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Column from "../Column";
 import "./layout.css";
 
-import { getTasks } from "./api";
+import { addTask, getTasks } from "../../api";
 
 const Columns = ({ tasks }) => {
   const statuses = ["TO DO", "IN PROGRESS", "DONE"];
@@ -29,15 +29,17 @@ function useLayout() {
     const target = e.target;
     const title = target.title.value;
     const desc = target.description.value;
-    const date = new Date().toISOString("DD/MM/YYYY");
-    const newTask = {
-      id: tasks.length + 1,
-      status: "TO DO",
-      title,
-      desc,
-      date,
-    };
-    setTasks([...tasks, newTask]);
+
+    createTask({ title, desc });
+  };
+  const createTask = async (data) => {
+    const task = await addTask(data);
+    console.log({ task });
+    setTasks([...tasks, task]);
+  };
+
+  const remove = async (id) => {
+    await removeTask(id);
   };
 
   return [tasks, handleSubmit];

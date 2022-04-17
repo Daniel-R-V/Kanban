@@ -1,4 +1,5 @@
 import "./column.css";
+import { removeTask } from "../../api";
 
 const ColumnTitle = ({ title }) => {
   return (
@@ -15,6 +16,7 @@ const Task = (task) => {
     <li key={task.id} className="tasks">
       <h5 className="taskTitle">{task.title}</h5>
       <p>{task.desc}</p>
+      <button onClick={remove}>Delete</button>
     </li>
   );
 };
