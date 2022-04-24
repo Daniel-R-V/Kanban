@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import Column from "../Column";
+
+import { addTask, getTasks, removeTask } from "../../api";
+import { STATUSES } from "../../constants";
 import "./layout.css";
 
-import { addTask, getTasks } from "../../api";
-
-const Columns = ({ tasks }) => {
+const Columns = ({ tasks, remove, updateStatus }) => {
   const statuses = ["TO DO", "IN PROGRESS", "DONE"];
   return statuses.map((status) => (
     <Column
       key={status}
       title={status}
       tasks={tasks.filter((task) => task.status === status)}
+      remove={remove}
+      updateStatus={updateStatus}
     />
   ));
 };
@@ -40,13 +43,29 @@ function useLayout() {
 
   const remove = async (id) => {
     await removeTask(id);
+    setTasks(tasks.filter((task) => id !== task.id));
   };
 
-  return [tasks, handleSubmit];
+  const updateStatus = async (id, action) => {
+    const newTasks = tasks.map((task) => {
+      if (id === task.id) {
+        const statusIndex = STATUSES.findIndex((s) => s === task.status);
+        if (action === 1 && statusIndex != 0) {
+          task.status = statuses[statusIndex - 1];
+        } else if (action === 2 && statusIndex < STATUSES.length - 1) {
+          task.status = statuses[statusIndex + 1];
+        }
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  };
+
+  return { tasks, handleSubmit, remove, updateStatus };
 }
 
 function Layout({ user }) {
-  const [tasks, handleSubmit] = useLayout();
+  const { tasks, handleSubmit, remove, updateStatus } = useLayout();
 
   return (
     <div>
@@ -72,7 +91,7 @@ function Layout({ user }) {
               Add It
             </button>
           </form>
-          <Columns tasks={tasks} />
+          <Columns tasks={tasks} remove={remove} updateStatus={updateStatus} />
         </main>
       )}
     </div>

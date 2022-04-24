@@ -1,5 +1,5 @@
+import { STATUSES } from "../../constants";
 import "./column.css";
-import { removeTask } from "../../api";
 
 const ColumnTitle = ({ title }) => {
   return (
@@ -12,20 +12,41 @@ const ColumnTitle = ({ title }) => {
 //Como podemos diferenciar las tareas de cada columna? en este momento tenemos 3 tareas iguales para las 3 columnas
 
 const Task = (task) => {
+  const prevButton =
+    task.status != STATUSES[0] ? (
+      <button onClick={() => task.updateStatus(task.id, 1)}>{"<--"}</button>
+    ) : null;
+
+  const nextButton =
+    task.status != STATUSES[2] ? (
+      <button onClick={() => task.updateStatus(task.id, 2)}>{"-->"}</button>
+    ) : null;
+
   return (
     <li key={task.id} className="tasks">
       <h5 className="taskTitle">{task.title}</h5>
       <p>{task.desc}</p>
-      <button onClick={remove}>Delete</button>
+      {prevButton}
+      <button onClick={() => task.remove(task.id)}>Delete</button>
+      {nextButton}
     </li>
   );
 };
 
-const Column = ({ title, tasks = [] }) => {
+const Column = ({ title, tasks = [], remove, updateStatus }) => {
   return (
     <section className="column">
       <ColumnTitle title={title} />
-      <ul>{tasks.map(Task)}</ul>
+      <ul>
+        {tasks.map((task) => (
+          <Task
+            key={task.id}
+            remove={remove}
+            updateStatus={updateStatus}
+            {...task}
+          />
+        ))}
+      </ul>
     </section>
   );
 };
