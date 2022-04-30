@@ -14,12 +14,22 @@ const ColumnTitle = ({ title }) => {
 const Task = (task) => {
   const prevButton =
     task.status != STATUSES[0] ? (
-      <button onClick={() => task.updateStatus(task.id, 1)}>{"<--"}</button>
+      <button
+        className="prev-button"
+        onClick={() => task.updateStatus(task.id, 1)}
+      >
+        {"⬅"}
+      </button>
     ) : null;
 
   const nextButton =
     task.status != STATUSES[2] ? (
-      <button onClick={() => task.updateStatus(task.id, 2)}>{"-->"}</button>
+      <button
+        className="next-button"
+        onClick={() => task.updateStatus(task.id, 2)}
+      >
+        {"➡"}
+      </button>
     ) : null;
 
   return (
@@ -27,7 +37,9 @@ const Task = (task) => {
       <h5 className="taskTitle">{task.title}</h5>
       <p>{task.desc}</p>
       {prevButton}
-      <button onClick={() => task.remove(task.id)}>Delete</button>
+      <button className="delete-task" onClick={() => task.remove(task.id)}>
+        Eliminar
+      </button>
       {nextButton}
     </li>
   );

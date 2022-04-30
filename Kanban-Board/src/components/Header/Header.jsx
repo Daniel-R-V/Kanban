@@ -9,7 +9,7 @@ function Header({ user, logout, login }) {
         <>
           <img src={user.avatar} alt={user.name} />
           <p>
-            Hello <strong>{user.name}</strong>
+            Hola <strong>{user.name}</strong>
           </p>
           <button onClick={logout}>Logout</button>
         </>

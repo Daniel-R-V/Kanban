@@ -51,9 +51,9 @@ function useLayout() {
       if (id === task.id) {
         const statusIndex = STATUSES.findIndex((s) => s === task.status);
         if (action === 1 && statusIndex != 0) {
-          task.status = statuses[statusIndex - 1];
+          task.status = STATUSES[statusIndex - 1];
         } else if (action === 2 && statusIndex < STATUSES.length - 1) {
-          task.status = statuses[statusIndex + 1];
+          task.status = STATUSES[statusIndex + 1];
         }
       }
       return task;
@@ -70,11 +70,11 @@ function Layout({ user }) {
   return (
     <div>
       {!user ? (
-        <p>You need to be logged to use the app</p>
+        <p>Necesitas estar registrado para utilizar la app</p>
       ) : (
         <main className="layout">
           <form className="form" onSubmit={handleSubmit}>
-            <h3 className="title-form">Create a New Task</h3>
+            <h3 className="title-form">Crear una nueva tarea</h3>
             <input
               className="input"
               name="title"

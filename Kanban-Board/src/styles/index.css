@@ -1,7 +1,7 @@
 :root {
-  --main-color-h: 183;
-  --main-color-s: 100%;
-  --main-color-l: 35%;
+  --main-color-h: 217;
+  --main-color-s: 10%;
+  --main-color-l: 25%;
   --main-color: hsl(
     var(--main-color-h),
     var(--main-color-s),
@@ -17,37 +17,49 @@
     var(--header-color-l)
   );
 
-  --column-color-h: 173;
-  --column-color-s: 100%;
-  --column-color-l: 97%;
+  --column-color-h: 217;
+  --column-color-s: 10%;
+  --column-color-l: 25%;
   --column-color: hsl(
     var(--column-color-h),
     var(--column-color-s),
     var(--column-color-l)
   );
 
+  --border-color-h: 217;
+  --border-color-s: 10%;
+  --border-color-l: 25%;
   --border-color: hsl(
-    var(--main-color-h),
-    var(--main-color-s),
-    calc(var(--main-color-l) * 0.5)
+    var(--border-color-h),
+    var(--border-color-s),
+    var(--border-color-l)
   );
 
-  --title-color-h: 40;
-  --title-color-s: 100%;
-  --title-color-l: 60%;
+  --title-color-h: 0;
+  --title-color-s: 0%;
+  --title-color-l: 93%;
   --title-color: hsl(
     var(--title-color-h),
     var(--title-color-s),
     var(--title-color-l)
   );
 
-  --body-color-h: 190;
-  --body-color-s: 77%;
-  --body-color-l: 88%;
+  --body-color-h: 216;
+  --body-color-s: 18%;
+  --body-color-l: 16%;
   --body-color: hsl(
     var(--body-color-h),
     var(--body-color-s),
     var(--body-color-l)
+  );
+
+  --text-color-h: 28;
+  --text-color-s: 100%;
+  --text-color-l: 35%;
+  --text-color: hsl(
+    var(--text-color-h),
+    var(--text-color-s),
+    var(--text-color-l)
   );
 }
 

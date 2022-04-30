@@ -13,17 +13,17 @@
   align-content: center;
   margin-top: 1em;
   margin-left: -13em;
-  background-color: var(--header-color);
+  background-color: var(--main-color);
   border-radius: 20px;
   box-sizing: border-box;
   height: 14em;
   padding: 2em;
-  width: 16em;
+  width: 18em;
   justify-content: center;
 }
 
 .layout .form .input {
-  color: var(--header-color);
+  color: var(--text-color);
   margin-bottom: 0.8em;
   font-size: 1.1em;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -32,17 +32,23 @@
 .layout .form .submit {
   background-color: var(--body-color);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: var(--header-color);
+  color: var(--title-color);
   font-size: 1.2rem;
+}
+
+.layout .form .submit:hover {
+  background-color: var(--text-color);
+  cursor: pointer;
 }
 
 .layout .form .title-form {
   margin: auto;
-  color: var(--body-color);
+  font-size: 1.3em;
+  color: var(--title-color);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-bottom: 0.5em;
 }
 
 .layout .form ::placeholder {
-  color: var(--header-color);
+  color: var(--body-color);
 }
