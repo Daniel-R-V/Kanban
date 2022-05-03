@@ -70,7 +70,10 @@ function Layout({ user }) {
   return (
     <div>
       {!user ? (
-        <p>Necesitas estar registrado para utilizar la app</p>
+        <div className="need-login">
+          <p>👋🏼¡Hola! </p>
+          <p>Debes hacer login para poder utilizar la app</p>
+        </div>
       ) : (
         <main className="layout">
           <form className="form" onSubmit={handleSubmit}>
@@ -79,16 +82,16 @@ function Layout({ user }) {
               className="input"
               name="title"
               type="text"
-              placeholder="Title"
+              placeholder="Título"
             />
             <input
               className="input"
               name="description"
               type="text"
-              placeholder="Description"
+              placeholder="Descripción"
             />
             <button className="submit" type="submit">
-              Add It
+              ¡Añadela!
             </button>
           </form>
           <Columns tasks={tasks} remove={remove} updateStatus={updateStatus} />

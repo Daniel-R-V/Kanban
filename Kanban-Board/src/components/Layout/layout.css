@@ -7,6 +7,20 @@
   margin: 0 auto;
 }
 
+.need-login {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+  color: var(--title-color);
+}
+
 .layout .form {
   display: flex;
   flex-direction: column;
@@ -14,7 +28,7 @@
   margin-top: 1em;
   margin-left: -13em;
   background-color: var(--main-color);
-  border-radius: 20px;
+  border-radius: 0.5em;
   box-sizing: border-box;
   height: 14em;
   padding: 2em;
@@ -23,10 +37,11 @@
 }
 
 .layout .form .input {
-  color: var(--text-color);
   margin-bottom: 0.8em;
   font-size: 1.1em;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 0.5em;
+  border: none;
 }
 
 .layout .form .submit {
@@ -34,6 +49,8 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: var(--title-color);
   font-size: 1.2rem;
+  border-radius: 0.5em;
+  border: none;
 }
 
 .layout .form .submit:hover {
@@ -46,7 +63,8 @@
   font-size: 1.3em;
   color: var(--title-color);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-top: -0.5em;
 }
 
 .layout .form ::placeholder {

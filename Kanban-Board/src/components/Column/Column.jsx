@@ -35,12 +35,14 @@ const Task = (task) => {
   return (
     <li key={task.id} className="tasks">
       <h5 className="taskTitle">{task.title}</h5>
-      <p>{task.desc}</p>
-      {prevButton}
-      <button className="delete-task" onClick={() => task.remove(task.id)}>
-        Eliminar
-      </button>
-      {nextButton}
+      <p className="taskDescription">{task.desc}</p>
+      <div>
+        {prevButton}
+        {nextButton}
+        <button className="delete-task" onClick={() => task.remove(task.id)}>
+          Eliminar
+        </button>
+      </div>
     </li>
   );
 };
@@ -49,7 +51,7 @@ const Column = ({ title, tasks = [], remove, updateStatus }) => {
   return (
     <section className="column">
       <ColumnTitle title={title} />
-      <ul>
+      <ul className="each-task">
         {tasks.map((task) => (
           <Task
             key={task.id}

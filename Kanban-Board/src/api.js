@@ -39,3 +39,17 @@ export async function removeTask(id) {
     throw new Error(error);
   }
 }
+
+export async function updateTask(id, status) {
+  try {
+    const response = await fetch(`${API_URL}/tasks/${id}`, {
+      method: "PUT",
+    });
+    if (response.status == 204) {
+      return true;
+    }
+  } catch (error) {
+    console.log(error);
+    throw new Error(error);
+  }
+}
