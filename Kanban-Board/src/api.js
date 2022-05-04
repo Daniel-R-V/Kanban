@@ -44,10 +44,12 @@ export async function updateTask(id, status) {
   try {
     const response = await fetch(`${API_URL}/tasks/${id}`, {
       method: "PUT",
+      body: JSON.stringify({ status }),
     });
     if (response.status == 204) {
       return true;
     }
+    throw new Error("error updating task");
   } catch (error) {
     console.log(error);
     throw new Error(error);

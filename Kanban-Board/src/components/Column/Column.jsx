@@ -1,10 +1,16 @@
 import { STATUSES } from "../../constants";
 import "./column.css";
 
+const titles = {
+  [STATUSES[0]]: "📌 POR HACER",
+  [STATUSES[1]]: "⏰ EN PROCESO",
+  [STATUSES[2]]: "🎉 HECHO",
+};
+
 const ColumnTitle = ({ title }) => {
   return (
     <header>
-      <h3>{title}</h3>
+      <h3>{titles[title]}</h3>
     </header>
   );
 };

@@ -39,13 +39,13 @@ const destroy = async (req, res) => {
 
 const update = async (req, res) => {
   const id = req.params.taskId;
-  const { status } = req.body;
-
+  const { status } = JSON.parse(req.body);
+  console.log({ status, id });
   if (!statuses.includes(status)) {
     res.code(500).send({ message: "status not allowed" });
   }
   try {
-    const task = await Task.update({ where: id, values: { status } });
+    const task = await Task.update({ status }, { where: { id: id } });
     res.code(204).send(task);
   } catch (error) {
     res.code(500).send({ message: error.message });

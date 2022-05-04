@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Column from "../Column";
 
-import { addTask, getTasks, removeTask } from "../../api";
+import { addTask, getTasks, removeTask, updateTask } from "../../api";
 import { STATUSES } from "../../constants";
 import "./layout.css";
 
@@ -55,6 +55,7 @@ function useLayout() {
         } else if (action === 2 && statusIndex < STATUSES.length - 1) {
           task.status = STATUSES[statusIndex + 1];
         }
+        updateTask(id, task.status);
       }
       return task;
     });
