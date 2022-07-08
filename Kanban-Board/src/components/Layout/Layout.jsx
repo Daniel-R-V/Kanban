@@ -78,21 +78,21 @@ function Layout({ user }) {
       ) : (
         <main className="layout">
           <form className="form" onSubmit={handleSubmit}>
-            <h3 className="title-form">Crear una nueva tarea</h3>
+            <h3 className="title-form">Add a new task</h3>
             <input
               className="input"
               name="title"
               type="text"
-              placeholder="Título"
+              placeholder="Title"
             />
             <input
               className="input"
               name="description"
               type="text"
-              placeholder="Descripción"
+              placeholder="Description"
             />
             <button className="submit" type="submit">
-              ¡Añadela!
+              Add it!
             </button>
           </form>
           <Columns tasks={tasks} remove={remove} updateStatus={updateStatus} />

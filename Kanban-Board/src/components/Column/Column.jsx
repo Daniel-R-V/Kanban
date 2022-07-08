@@ -2,9 +2,9 @@ import { STATUSES } from "../../constants";
 import "./column.css";
 
 const titles = {
-  [STATUSES[0]]: "📌 POR HACER",
-  [STATUSES[1]]: "⏰ EN PROCESO",
-  [STATUSES[2]]: "🎉 HECHO",
+  [STATUSES[0]]: "📌 TO DO",
+  [STATUSES[1]]: "⏰ IN PROGRESS",
+  [STATUSES[2]]: "🎉 DONE",
 };
 
 const ColumnTitle = ({ title }) => {
