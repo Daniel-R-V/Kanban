@@ -72,8 +72,8 @@ function Layout({ user }) {
     <div>
       {!user ? (
         <div className="need-login">
-          <p>👋🏼¡Hola! </p>
-          <p>Debes hacer login para poder utilizar la app</p>
+          <p>👋🏼¡Hello! </p>
+          <p>You have to login to use app</p>
         </div>
       ) : (
         <main className="layout">
