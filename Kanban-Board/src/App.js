@@ -12,8 +12,8 @@ function App() {
 
   function login() {
     setUser({
-      name: "David Medrano",
-      avatar: "https://eu.ui-avatars.com/api/?name=David",
+      name: "Daniel",
+      avatar: "https://eu.ui-avatars.com/api/?name=Daniel",
     });
   }
 
