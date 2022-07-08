@@ -15,7 +15,7 @@
 
 1️⃣
 
-![Kanban](Kanban-Board/src/images/image1.JPG)
+![Kanban](Kanban-Board/src/images/image1.jpg)
 
 
 2️⃣
