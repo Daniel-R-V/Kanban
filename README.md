@@ -13,30 +13,30 @@
 ⚡ Let's check out some images from project
 
 
-1️⃣
+📱 SCREENSHOT 1️⃣
 
 ![Kanban](Kanban-Board/src/images/image1.jpg)
 
 
-2️⃣
+📱 SCREENSHOT 2️⃣
 
 
 ![Kanban](Kanban-Board/src/images/image2.jpg)
 
 
-3️⃣
+📱 SCREENSHOT 3️⃣
 
 ![Kanban](Kanban-Board/src/images/image3.jpg)
 
 
 
 
-4️⃣
+📱 SCREENSHOT 4️⃣
 
 ![Kanban](Kanban-Board/src/images/image4.jpg)
 
 
 
-5️⃣
+📱 SCREENSHOT 5️⃣
 
 ![Kanban](Kanban-Board/src/images/image5.jpg)
